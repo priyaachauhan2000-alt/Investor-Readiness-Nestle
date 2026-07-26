@@ -8,7 +8,8 @@ EXCEL_FILE = "data/Nestle_India_Investor_Readiness.xlsx"
 
 @st.cache_data
 def load_sheet(name):
-    return pd.read_excel(EXCEL_FILE, sheet_name=name)
+    df = pd.read_excel(EXCEL_FILE, sheet_name=name, header=1)
+    return df
 
 st.title("📈 Nestlé India Investor Readiness Dashboard")
 page = st.sidebar.selectbox(
